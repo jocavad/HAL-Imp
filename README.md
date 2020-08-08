@@ -1,11 +1,11 @@
-#HAL-Imp
+# HAL-Imp
 
 Small library for serializing Java objects to [HAL JSON](https://tools.ietf.org/html/draft-kelly-json-hal) format and parse back to Java objects.
 Serialization and parsing, that both rely heavily on Jackson library, is done through `Representation` object.
 Jackson library should be at least 2.10.0
 ##Serialize
 
-###POJO with Jackson annotations
+### POJO with Jackson annotations
 `Embedded` objects (like `List<ChildTabDTO> ct`, or `OtherEntity oe`) should be accessed only during deseralization
 
 ```java
@@ -42,8 +42,9 @@ public class OtherEntity implements java.io.Serializable {
 }
 ```
 
-###Data
+### Data
 
+```java
 ParentTabDTO ptd = new ParentTabDTO(1,"parent_1");
 ChildTabDTO ctpd1 = new ChildTabDTO(1);
 ctpd1.setOe(new OtherEntity(11));
@@ -54,8 +55,9 @@ ct.add(ctpd1);
 ct.add(ctpd2);
 ptd.setCt(ct);
 ptd.setSomeDate(LocalDate.parse("2015-02-20",DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+```
 
-###Properties
+### Properties
 
 `Representation` object
 
@@ -79,7 +81,7 @@ will serialize to
 }
 ```
 
-###Embedded
+### Embedded
 
 Embedded objects can only be added as `RepBuilder` or `Collection<RepBuilder>`
 
@@ -134,7 +136,7 @@ and it will serialize to
 }
 ```
 
-###Curies
+### Curies
 
 Curies are also possible
 
@@ -192,7 +194,7 @@ and it will serialize along with duplicate removal
 
 `Links` with same `href` and `name` are considered duplicate. This can be changed in `hashCode/equals` methods from `Links` class.
 
-##Parse
+## Parse
 
 It relies on Jacksons `@JsonProperty()` or field names.
 Parsing To entity
