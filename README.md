@@ -197,7 +197,8 @@ and it will serialize along with duplicate removal
 
 ## 2 - Parse
 
-It relies on Jacksons `@JsonProperty()` or field names.
+Parsing relies on Jacksons `@JsonProperty()` or field names.
+
 Parsing To entity
 
 ```java
