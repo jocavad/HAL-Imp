@@ -158,7 +158,7 @@ Representation rpr = new Representation.RepBuilder(ptd, "parent self uri "+ptd.g
                                        .build();
 ```
 
-and it will serialize along with duplicate removal
+and it will serialize along with duplicate curie removal
 
 ```json
 {
@@ -205,7 +205,7 @@ Parsing To entity
 ParentTabDTO ptd2 = Utils.getParser().createEntityObject(json, ParentTabDTO.class);
 ```
 
-or to `Representation` object if relations differs from class's filed names
+or to `Representation` object if relations differs from class's field names
 
 ```java
 Representation rep = Utils.getParser().createRepObject(json);
