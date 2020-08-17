@@ -1,4 +1,4 @@
-# HAL-Imp
+# HAL-b
 
 Small library for serializing Java objects to [HAL JSON](https://tools.ietf.org/html/draft-kelly-json-hal) format and parse back to Java objects.
 Serialization and parsing, that both rely heavily on Jackson library, is done through `Representation` object.
